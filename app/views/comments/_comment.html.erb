@@ -1,0 +1,13 @@
+<ul class="comments-list"> 
+  <% object.each do |c|%> 
+    <li>
+      <div >
+        <div class= "row col-8">
+          <%= image_tag c.user.gravatar_url(size:25)%> &nbsp
+          <p class="user-comment"><%=c.user.username %> &nbsp </p>
+          <body> <%= c.content %> </body>
+        </div>
+      </div>
+    </li>
+  <% end %>
+</ul>

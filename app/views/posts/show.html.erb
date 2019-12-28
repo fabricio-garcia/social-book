@@ -1,0 +1,14 @@
+<div class= 'card row'>
+  <div class= "row col-8">
+    <%= image_tag @post.user.gravatar_url(size:40)%>
+    <p class = "font-weight-bold col-8"><%= @post.user.username %></p>
+  </div>
+  <body class= "col-8"> <%= @post.content %> </body>
+  <p>Posted <%= time_ago_in_words(@post.created_at)%> ago</p>
+  <div class='col-12'>
+    <%= render 'comments/comment', object: @post.comments %>
+  </div>
+  <div class='col-12'>
+    <%= render 'comments/create' %>
+  </div>
+</div>

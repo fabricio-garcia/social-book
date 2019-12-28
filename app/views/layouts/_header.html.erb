@@ -1,0 +1,22 @@
+<nav>
+    <nav id='logo' class="navbar navbar-expand-sm navbar-light bg-light">
+        <p class="navbar-brand">SocialBook</p>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="collapse navbar-collapse list-style-none text-right" id="navbarSupportedContent">
+                <% if user_signed_in? %>
+                <li class="nav-item active"><%= link_to "Home", root_path, class:"nav-link" %></li>
+                <li class="nav-item active">
+                    <%= link_to current_user.username, user_path(current_user), class:"nav-link" %></li>
+                <li class="nav-item active"><%= link_to 'Users', users_path, class:"nav-link" %></li>
+
+                <li class="dropdown-item"><%= link_to "Notifications", user_friendships_path(current_user) %>
+                    <% if !current_user.friend_requests.empty? %>
+                    <span class="badge badge-danger"><%= current_user.friend_requests.count %></span>
+                    <% end %>
+                </li>
+                <li class="dropdown-item"><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
+                <% end %>
+            </ul>
+        </div>
+    </nav>
+</nav>

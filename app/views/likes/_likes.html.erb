@@ -1,0 +1,8 @@
+<div class="col-6 mx-auto mb-5">
+    <%= form_with model: @like do |f| %>
+    <div class="actions text-center">
+        <%= f.hidden_field :post_id, value: post_id%>
+        <%= f.submit "Like", class:"btn btn-primary" %>
+    </div>
+    <% end %>
+</div>

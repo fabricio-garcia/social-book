@@ -1,0 +1,11 @@
+<div class="col-6 mx-auto mb-5">
+  <%= form_with model: @comment do |f| %>
+    <div class="field">
+      <%= f.text_area :content, class: 'col-12 text-area', placeholder: 'Post a comment'  %>
+      <%= f.hidden_field :post_id, value: post_id%>
+    </div>
+    <div class="actions text-center">
+      <%= f.submit "Comment", class:"btn btn-primary" %>
+    </div>
+  <% end %>
+</div>

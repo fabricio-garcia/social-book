@@ -1,0 +1,23 @@
+<h2 class="text-center my-5">Friendship requests</h2>
+<ul class="users-list col-8 m-auto">
+    <% if @friend_requests.empty? %>
+        <div class="card">
+        <p class = "text-center font-weight-bold red">There are no friend requests</p>
+        </div>    
+    <% else %>
+        <% @friend_requests.each do |user| %>
+        <li class='user-info col-12 card'>
+            <div class="row col-9 mx-auto my-5 d-flex justify-content-center">
+                <div class='col-7 row'>
+                    <div class="col-5"> <%= image_tag user.gravatar_url %> </div>
+                    <p class="col-7"><%= link_to user.username, user_path(user.id) %></p>
+                </div>
+                <div class="col-5 row d-flex justify-content-between">
+                    <%= button_to 'Accept', user_friendship_accept_path(friendship_id: user.find_friendship(current_user)), class:"btn btn-success" %>
+                    <%= button_to 'Decline', user_friendship_path(id: user.find_friendship(current_user)), method: :delete, class:"btn btn-danger" %>
+                </div>
+            </div>
+        </li>
+        <% end %>
+    <% end %>
+</ul>
