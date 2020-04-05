@@ -25,7 +25,7 @@ The objective of the project is to practice our Rails skills in:
 [Live Demo Link](https://powerful-scrubland-66847.herokuapp.com)
 
 
-## Getting Started
+## Usage
 
 **If you want to check this project, follow the  instructions on setting it up locally.**
 
@@ -99,7 +99,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 ### Install
 
-### Run tests
+## Automated tests
 
 For testing the application you will need to run: `rspec spec`
 
